@@ -1,3 +1,8 @@
+let playerScore = document.getElementById('player-score');
+let computerScore = document.getElementById('comp-score');
+let playerWin = 0;
+let computerWin = 0;
+
 function playGame(playerInput) {
 	clearMessages();
 	function getMoveName(argMoveId) {
@@ -17,16 +22,28 @@ function playGame(playerInput) {
 		console.log('moves:', argComputerMove, argPlayerMove);
 		if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
 			printMessage('WYGRAŁEŚ :)');
+			playerWin++;
+			playerScore.textContent = playerWin;
 		} else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
 			printMessage('WYGRAŁEŚ :)');
+			playerWin++;
+			playerScore.textContent = playerWin;
 		} else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
 			printMessage('WYGRAŁEŚ :)');
+			playerWin++;
+			playerScore.textContent = playerWin;
 		} else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
 			printMessage('PRZEGRAŁEŚ :(');
+			computerWin++;
+			computerScore.textContent = computerWin;
 		} else if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
 			printMessage('PRZEGRAŁEŚ :(');
+			computerWin++;
+			computerScore.textContent = computerWin;
 		} else if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
 			printMessage('PRZEGRAŁEŚ :(');
+			computerWin++;
+			computerScore.textContent = computerWin;
 		} else if (argComputerMove == argPlayerMove) {
 			printMessage('REMIS');
 		} else if (argPlayerMove == 'nieznany ruch') {
