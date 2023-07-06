@@ -8,13 +8,19 @@
 </head>
 
 <body>
+    <h1 class="game-title">Kamień Papier Nożyce</h1>
     <div class="container">
-        <div id="buttons">
+        <div id="buttons" class="buttons">
             <button type="button" id="play-rock">Kamień</button>
             <button type="button" id="play-paper">Papier</button>
             <button type="button" id="play-scissors">Nożyce</button>
         </div>
-        <div id="messages"></div>
+        <div id="messages" class="messages"></div>
+        <div class="score-box">
+            <p>Punktacja:</p>
+            <p> 🙋‍♂️ <span class="score-number" id="player-score">0</span> : <span class="score-number"
+                    id="comp-score">0</span> 💻</p>
+        </div>
     </div>
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>

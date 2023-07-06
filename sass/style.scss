@@ -1,0 +1,71 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M20-5V5m0 30v10m20-30v10M0 15v10'  stroke-linejoin='round' stroke-linecap='round' stroke-width='1' stroke='hsla(231, 18%, 61%, 1)' fill='none'/><path d='M-5 40H5M-5 0H5m30 0h10M35 40h10M15 20h10'  stroke-linejoin='round' stroke-linecap='round' stroke-width='1' stroke='hsla(231, 29%, 62%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}
+
+.game-title {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 42px;
+	font-weight: 700;
+	margin-top: 30px;
+	background-color: #fff;
+	padding: 10px;
+}
+
+.container {
+	background-color: #fff;
+	width: 500px;
+	margin: 30px auto;
+	height: 250px;
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgb(171, 171, 171);
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+
+	.buttons {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	button {
+		border: none;
+		padding: 10px 20px;
+		border-radius: 4px;
+		background-color: #4383d1;
+		color: #fff;
+		transition: all 0.3s;
+		cursor: pointer;
+		&:hover {
+			background-color: #3069ae;
+		}
+	}
+
+	.score-number {
+		font-weight: 700;
+		font-size: 28px;
+	}
+
+	.messages {
+		line-height: 1.6;
+	}
+
+	p:last-child {
+		font-size: 24px;
+	}
+}
