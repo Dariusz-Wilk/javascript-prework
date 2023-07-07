@@ -10,7 +10,9 @@ function playGame(playerInput) {
 			return 'kamień';
 		} else if (argMoveId == 2) {
 			return 'papier';
-		} else if (argMoveId == 3) {
+
+			// computer will choose scissors 75% of the time
+		} else if (argMoveId >= 3 && argMoveId <= 8) {
 			return 'nożyce';
 		}
 
@@ -43,7 +45,7 @@ function playGame(playerInput) {
 		}
 	}
 
-	let randomNumber = Math.floor(Math.random() * 3 + 1);
+	let randomNumber = Math.floor(Math.random() * 8 + 1);
 	console.log('Wylosowana liczba to: ' + randomNumber);
 
 	let computerMove = getMoveName(randomNumber);
@@ -58,6 +60,13 @@ function playGame(playerInput) {
 	displayResult(computerMove, playerMove);
 }
 
+// The function simulates 1000 rounds by selecting a rock
+function thousandPlays() {
+	for (let i = 0; i < 1000; i++) {
+		playGame(1);
+	}
+}
+
 document.getElementById('play-rock').addEventListener('click', function () {
 	playGame(1);
 });
@@ -67,3 +76,7 @@ document.getElementById('play-paper').addEventListener('click', function () {
 document.getElementById('play-scissors').addEventListener('click', function () {
 	playGame(3);
 });
+
+document
+	.getElementById('play-thousand')
+	.addEventListener('click', thousandPlays);
