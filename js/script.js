@@ -67,6 +67,16 @@ function thousandPlays() {
 	}
 }
 
+function resetGame() {
+	playerWin = 0;
+	computerWin = 0;
+	playerScore.textContent = '0';
+	computerScore.textContent = '0';
+	clearMessages();
+	printMessage('Nowa Gra!');
+	printMessage('Wybierz swój ruch');
+}
+
 document.getElementById('play-rock').addEventListener('click', function () {
 	playGame(1);
 });
@@ -80,3 +90,5 @@ document.getElementById('play-scissors').addEventListener('click', function () {
 document
 	.getElementById('play-thousand')
 	.addEventListener('click', thousandPlays);
+
+document.getElementById('reset-game').addEventListener('click', resetGame);
