@@ -1,5 +1,7 @@
 let playerScore = document.getElementById('player-score');
 let computerScore = document.getElementById('comp-score');
+let numsOfPLay = document.getElementById('play-nums-value');
+let inputPlayNums = document.getElementById('play-nums');
 let playerWin = 0;
 let computerWin = 0;
 
@@ -61,8 +63,8 @@ function playGame(playerInput) {
 }
 
 // The function simulates 1000 rounds by selecting a rock
-function thousandPlays() {
-	for (let i = 0; i < 1000; i++) {
+function multiPlays() {
+	for (let i = 0; i < inputPlayNums.value; i++) {
 		playGame(1);
 	}
 }
@@ -87,8 +89,9 @@ document.getElementById('play-scissors').addEventListener('click', function () {
 	playGame(3);
 });
 
-document
-	.getElementById('play-thousand')
-	.addEventListener('click', thousandPlays);
+document.getElementById('play-thousand').addEventListener('click', multiPlays);
 
+inputPlayNums.addEventListener('change', () => {
+	numsOfPLay.textContent = inputPlayNums.value;
+});
 document.getElementById('reset-game').addEventListener('click', resetGame);

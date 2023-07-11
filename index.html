@@ -23,8 +23,14 @@
         </div>
         <div class="buttons">
 
-            <button type="button" id="play-thousand">Zagraj 1000 razy!</button>
+            <button type="button" id="play-thousand">Zagraj <span id="play-nums-value">10</span> razy!</button>
             <button type="button" id="reset-game">New Game</button>
+        </div>
+
+        <div class="input">
+
+            <label class="play-nums-label" for="play-nums">Wybierz liczbę gier do automatycznego zagrania:</label>
+            <input class="play-nums" type="range" id="play-nums" min="10" max="100" value="10" step="10">
         </div>
     </div>
     <script src="js/functions.js"></script>
